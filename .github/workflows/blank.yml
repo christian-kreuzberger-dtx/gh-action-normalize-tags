@@ -37,7 +37,7 @@ jobs:
         shell: bash
         id: normalize_tags
         run: |
-          tags=$(echo '${{ inputs.TAGS }}' | tr '[:upper:]' '[:lower:]')
+          tags=$(echo '${{ env.TAGS }}' | tr '[:upper:]' '[:lower:]')
           tags="${tags//'%'/'%25'}"
           tags="${tags//$'\n'/'%0A'}"
           tags="${tags//$'\r'/'%0D'}"
